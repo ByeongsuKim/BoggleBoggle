@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>단어 불러오기</button>
+    <div id="text_field">adsf</div>
+</body>
+<script src="splitletter.js"></script>
+<script>
+    const quiz_list = ["바나나","우유","당근","초콜릿","장난감"];
+    const text_field = document.getElementById('text_field');
+    
+    // 자음, 모음을 모두 잘라 넣은 배열 split_list
+    let split_list = new Array(quiz_list);
+    
+    let quiz_size = -1; // quiz_size에 맞춰 split_list에 넣을 예정
+    quiz_list.forEach(output);
+
+
+    // quiz_list의 문제들을 자음, 모음으로 나누기
+    function output(quiz){
+        quiz_size = quiz_size + 1;
+        let word = new Object(); 
+        for ( i in quiz){
+            let one_letter = getConstantVowel(quiz[i]);
+            // split_list[quiz_size]
+            console.log(one_letter);
+            Object.assign(word,one_letter);
+        }        
+        // split_list[quiz_size]=console.log(word);
+    }
+
+    
+
+
+
+</script>
+</html>
