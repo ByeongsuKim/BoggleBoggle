@@ -7,20 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <button>단어 불러오기</button>
+    <button id="load_word_btn">단어 불러오기</button>
     <div id="text_field">adsf</div>
 </body>
 <script src="splitletter.js"></script>
 <script>
     const quiz_list = ["바나나","우유","당근","초콜릿","장난감"];
     const text_field = document.getElementById('text_field');
-    
+
+    const load_word = document.getElementById('load_word_btn');
+    load_word.addEventListener("click", new_window);
+
+    function new_window() {
+        window.open('word_input.html','', 'width=500, height=500');
+    }
+
     // 자음, 모음을 모두 잘라 넣은 배열 split_list
     let split_list = new Array(quiz_list);
     
     let quiz_size = -1; // quiz_size에 맞춰 split_list에 넣을 예정
     quiz_list.forEach(output);
-
 
     // quiz_list의 문제들을 자음, 모음으로 나누기
     function output(quiz){
@@ -29,15 +35,11 @@
         for ( i in quiz){
             let one_letter = getConstantVowel(quiz[i]);
             // split_list[quiz_size]
-            console.log(one_letter);
+            // console.log(one_letter);
             Object.assign(word,one_letter);
         }        
         // split_list[quiz_size]=console.log(word);
     }
-
-    
-
-
 
 </script>
 </html>
