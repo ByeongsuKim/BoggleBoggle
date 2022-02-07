@@ -1,0 +1,13 @@
+#slide_frame {
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: azure;
+    position: relative;
+    margin: 100px;
+}
+
+#start_button {
+    position: relative;
+    margin: 100px;
+}
