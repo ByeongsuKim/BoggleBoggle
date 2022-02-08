@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>초성퀴즈</title>
-    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>보글보글 - 보물같은 우리 글, 보석같은 우리 글</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- HTML 분할 관리-->
+    <script src="../js/includeHTML.js"></script>
 
+    
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
 </head>
+
 <body>
+
+    <!-- Navigation-->
+    <div include-html="../nav.html"></div>   
+    <div include-html="../section.html"></div>   
+
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-12">안녕</div>
+        
+    </div>
+
+
     <button id="load_word_btn">단어 불러오기</button>
     <div id="text_field">현재 불러온 단어 없음</div>
     <div class="game">
+        
+        <!-- 슬라이드 공간-->
+
         <div id="slide_frame">슬라이드 공간</div>
         <button id="start_button">게임 시작</button>
     </div>
@@ -47,5 +74,8 @@
         // split_list[quiz_size]=console.log(word);
     }
 
+</script>
+<script>
+    includeHTML(); // HTML 삽입 (nav, section등을 분리해서 관리)
 </script>
 </html>
