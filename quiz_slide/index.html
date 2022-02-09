@@ -50,28 +50,25 @@
     <!-- Navigation-->
     <div include-html="../nav.html"></div>   
     
-    <section class="page-section portfolio" id="slide_quiz_page">
+    <section class="page-section container" id="slide_quiz_page">
 
-        <button id="load_word_btn" class="btn btn-primary">단어 불러오기</button>
-        <div id="text_field">현재 불러온 단어 없음</div>
-        <div class="game">
+        
+        <div class="row">
+            <button id="load_word_btn" class="btn btn-primary">단어 불러오기</button>
+            <div id="text_field">현재 불러온 단어 없음</div>
             
-            <div class="container">
-                <div class="row">
-                    <!-- 슬라이드 공간-->
-                    <div class="col-md-12">
+        </div>
+        <div class="row">
+            <!-- 슬라이드 공간-->
+            <div class="col-md-12">
 
-                        <div class="card" id="slide_frame">슬라이드 디자인 공간
-                            <div class="quiz_contents card-body"> 
-                                <h5 class="card-title">카드 제목</h5>
-                                <p class="card-text" id="card_text">문제가 나올 공간, 클래스명을 card-body로 해주세요.</p>
-                            </div>
-                            <button class="btn btn-primary" id="start_button">게임 시작</button>
-                        </div>
-                    </div>
+                <div class="card" id="slide_frame">
+                    <h5 class="card-title">카드 제목</h5>
+                    <ul class="quiz_contents card-body card_text"> 문제가 나올 공간, 클래스명을 card-body로 해주세요.
+                    </ul>
+                    <button class="btn btn-primary" id="start_button">게임 시작</button>
                 </div>
             </div>
-
         </div>
     </section>
 </body>
