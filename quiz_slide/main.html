@@ -46,11 +46,10 @@
 </head>
 
 <body>
-
-    <!-- Navigation-->
     <div include-html="../nav.html"></div>   
     
     <section class="page-section container" id="slide_quiz_page">
+<<<<<<< HEAD
 
         
         <div class="row">
@@ -68,6 +67,16 @@
                     <ul class="quiz_contents card-body card_text"> 문제가 나올 공간, 클래스명을 card-body로 해주세요.
                     </ul>
                 </div>
+=======
+        <div class="row">
+            <br>
+            <p> 초성퀴즈 단어 입력</p>
+            <div>
+                <input type="text" id="word" onkeyup="if(window.event.keyCode==13){word_save_card_body()}">
+                <button id="word_save">단어 저장하기</button>
+            </div>
+            <div class='text_add'>
+>>>>>>> 7542d72bc6a02337ea5fcf57c388acf565a56ded
             </div>
             <button class="btn btn-primary" id="start_button">게임 시작</button>
         </div>
@@ -76,11 +85,21 @@
 
 <script src="splitletter.js"></script>
 <script>
+<<<<<<< HEAD
     let quiz_list = ["바나나","우유","당근","초콜릿","장난감"];
     quiz_list.push('달팽이');
     console.log(quiz_list);
+=======
+    
+    const word_save = document.getElementById('word_save');
+    word_save.addEventListener("click", word_save_card_body);
+>>>>>>> 7542d72bc6a02337ea5fcf57c388acf565a56ded
 
+    const word = document.getElementById('word');
+    const text_add = document.querySelector('.text_add');
+    const quiz_list = []
 
+<<<<<<< HEAD
     // 입력된 퀴즈 낱말을 자음과 모음으로 분리시키기
     const start_button = document.getElementById('start_button');
     start_button.addEventListener("click", ()=>{
@@ -103,6 +122,16 @@
         console.log('quiz_card:', quiz_card);
         console.log('split_list: ', split_list);
     });
+=======
+    function word_save_card_body(){
+        const temp = document.createElement('div');
+        const card = text_add.appendChild(temp);
+        card.innerHTML = word.value;
+        quiz_list.push(word.value);
+        word.value="";
+        console.log(quiz_list);
+    }
+>>>>>>> 7542d72bc6a02337ea5fcf57c388acf565a56ded
 
     function return_ql() {
         return quiz_list;
