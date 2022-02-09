@@ -12,6 +12,18 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <style>
+        .slide_frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .quiz_contents {
+            width: 80%;
+            height: 300px;
+            background: #777;
+        }
+    </style>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
@@ -29,13 +41,19 @@
         <!-- HTML 분할 관리-->
         <script src="../js/includeHTML.js"></script>
 
+
 </head>
 
 <body>
 
     <!-- Navigation-->
     <div include-html="../nav.html"></div>   
-    <div include-html="../section.html"></div>   
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
 
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-12 col-lg-12">안녕</div>
@@ -49,40 +67,53 @@
         
         <!-- 슬라이드 공간-->
 
-        <div id="slide_frame">슬라이드 공간</div>
+        <div id="slide_frame">슬라이드 공간
+            <ul class="quiz_contents">
+            </ul>
+        </div>
         <button id="start_button">게임 시작</button>
     </div>
 </body>
+
 <script src="splitletter.js"></script>
 <script>
-    const quiz_list = ["바나나","우유","당근","초콜릿","장난감"];
+    let quiz_list = ["바나나","우유","당근","초콜릿","장난감"];
     const text_field = document.getElementById('text_field');
-
+    const contents= document.querySelector('.quiz-contents');
     const load_word = document.getElementById('load_word_btn');
     load_word.addEventListener("click", new_window);
 
     function new_window() {
         window.open('word_input.html','', 'width=500, height=500');
     }
-
-    // 자음, 모음을 모두 잘라 넣은 배열 split_list
-    let split_list = new Array(quiz_list);
-    
-    let quiz_size = -1; // quiz_size에 맞춰 split_list에 넣을 예정
-    quiz_list.forEach(output);
-
-    // quiz_list의 문제들을 자음, 모음으로 나누기
-    function output(quiz){
-        quiz_size = quiz_size + 1;
-        let word = new Object(); 
-        for ( i in quiz){
-            let one_letter = getConstantVowel(quiz[i]);
-            // split_list[quiz_size]
-            // console.log(one_letter);
-            Object.assign(word,one_letter);
-        }        
-        // split_list[quiz_size]=console.log(word);
+    //input에서 받아온 퀴즈값 변경하기
+    function upload_quiz(quiz) {
+        quiz_list = quiz;
+        document.querySelector('#text_field') = quiz_list.join()
     }
+
+
+    // 입력된 퀴즈 낱말을 자음과 모음으로 분리시키기
+    const start_button = document.getElementById('start_button');
+    start_button.addEventListener('click', ()=>{
+        let split_list=[] //각 낱말들이 분리된 결과 리스트
+        quiz_list.forEach((quiz) => {
+            let word =[] 
+            for (i in quiz) {
+                let one_letter = getConstantVowel(quiz[i])
+                let card = []
+                word.push(one_letter)
+                card.push(one_letter.f) //초성만 카드 리스트에 저장
+            }
+            split_list.push(word)
+            ///슬라이드 공간에 퀴즈 카드를 삽입하는 코드
+            const quiz_card = contents.appendChild('li')
+            quiz_card.className = 'quiz_card'
+            quiz_card.value = card.join()
+
+        })
+        console.log(split_list);
+    });
 
 </script>
 <script> includeHTML(); </script>
