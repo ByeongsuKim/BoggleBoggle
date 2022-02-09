@@ -80,7 +80,7 @@
 <script>
     let quiz_list = ["바나나","우유","당근","초콜릿","장난감"];
     const text_field = document.getElementById('text_field');
-    const contents= document.querySelector('.quiz-contents');
+    const contents= document.querySelector('.quiz_contents');
     const load_word = document.getElementById('load_word_btn');
     load_word.addEventListener("click", new_window);
 
@@ -100,20 +100,22 @@
         let split_list=[] //각 낱말들이 분리된 결과 리스트
         quiz_list.forEach((quiz) => {
             let word =[] 
+            let first_letters = []
+            let card = []
             for (i in quiz) {
                 let one_letter = getConstantVowel(quiz[i])
-                let card = []
                 word.push(one_letter)
-                card.push(one_letter.f) //초성만 카드 리스트에 저장
+                first_letters.push(one_letter.f) //초성만 카드 리스트에 저장
             }
             split_list.push(word)
             ///슬라이드 공간에 퀴즈 카드를 삽입하는 코드
-            const quiz_card = contents.appendChild('li')
-            quiz_card.className = 'quiz_card'
-            quiz_card.value = card.join()
+            const li_elem = document.createElement('li')
+            const quiz_card = contents.appendChild(li_elem)
+            console.log(quiz_card.value)
+            quiz_card.className = 'quiz_card';
+            quiz_card.innerHTML = first_letters.join(' ')
 
         })
-        console.log(split_list);
     });
 
 </script>
