@@ -82,12 +82,13 @@
     load_word.addEventListener("click", new_window);
 
     function new_window() {
-        window.open('word_input.html','', 'width=500, height=500');
+       const popup = window.open('word_input.html','', 'width=500, height=500');
     }
     //input에서 받아온 퀴즈값 변경하기
     function upload_quiz(quiz) {
         quiz_list = quiz;
-        document.querySelector('#text_field') = quiz_list.join()
+        document.querySelector('#text_field') = quiz_list.join();
+        popup.close();
     }
 
 
@@ -95,8 +96,9 @@
     const start_button = document.getElementById('start_button');
     start_button.addEventListener('click', ()=>{
         let split_list=[] //각 낱말들이 분리된 결과 리스트
+        console.log(quiz_list);
         quiz_list.forEach((quiz) => {
-            let word =[] 
+            let word =[]
             let first_letters = []
             let card = []
             for (i in quiz) {
@@ -108,7 +110,6 @@
             ///슬라이드 공간에 퀴즈 카드를 삽입하는 코드
             const li_elem = document.createElement('li')
             const quiz_card = contents.appendChild(li_elem)
-            console.log(quiz_card.value)
             quiz_card.className = 'quiz_card';
             quiz_card.innerHTML = first_letters.join(' ')
 
