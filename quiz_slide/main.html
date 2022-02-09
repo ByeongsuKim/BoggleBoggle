@@ -49,25 +49,6 @@
     <div include-html="../nav.html"></div>   
     
     <section class="page-section container" id="slide_quiz_page">
-<<<<<<< HEAD
-
-        
-        <div class="row">
-            <input type="text">
-            <button id="load_word_btn" class="btn btn-primary">단어 불러오기</button>
-            <div id="text_field">현재 불러온 단어 없음</div>
-            
-        </div>
-        <div class="row">
-            <!-- 슬라이드 공간-->
-            <div class="col-md-12">
-
-                <div class="card" id="slide_frame">
-                    <h5 class="card-title">카드 제목</h5>
-                    <ul class="quiz_contents card-body card_text"> 문제가 나올 공간, 클래스명을 card-body로 해주세요.
-                    </ul>
-                </div>
-=======
         <div class="row">
             <br>
             <p> 초성퀴즈 단어 입력</p>
@@ -76,7 +57,6 @@
                 <button id="word_save">단어 저장하기</button>
             </div>
             <div class='text_add'>
->>>>>>> 7542d72bc6a02337ea5fcf57c388acf565a56ded
             </div>
             <button class="btn btn-primary" id="start_button">게임 시작</button>
         </div>
@@ -85,27 +65,29 @@
 
 <script src="splitletter.js"></script>
 <script>
-<<<<<<< HEAD
-    let quiz_list = ["바나나","우유","당근","초콜릿","장난감"];
-    quiz_list.push('달팽이');
-    console.log(quiz_list);
-=======
     
     const word_save = document.getElementById('word_save');
     word_save.addEventListener("click", word_save_card_body);
->>>>>>> 7542d72bc6a02337ea5fcf57c388acf565a56ded
 
     const word = document.getElementById('word');
     const text_add = document.querySelector('.text_add');
     const quiz_list = []
+    const quiz_card = []
 
-<<<<<<< HEAD
+    function word_save_card_body(){
+        const temp = document.createElement('div');
+        const card = text_add.appendChild(temp);
+        card.innerHTML = word.value;
+        quiz_list.push(word.value);
+        word.value="";
+        console.log(quiz_list);
+    }
+
     // 입력된 퀴즈 낱말을 자음과 모음으로 분리시키기
     const start_button = document.getElementById('start_button');
     start_button.addEventListener("click", ()=>{
         window.open('slideshow.html','', 'width=500, height=500');
         let split_list=[] //각 낱말들이 분리된 결과 리스트
-        let quiz_card = []
         console.log('입력받은 quiz_list', quiz_list);
         quiz_list.forEach((quiz) => {
             let word =[]
@@ -122,17 +104,7 @@
         console.log('quiz_card:', quiz_card);
         console.log('split_list: ', split_list);
     });
-=======
-    function word_save_card_body(){
-        const temp = document.createElement('div');
-        const card = text_add.appendChild(temp);
-        card.innerHTML = word.value;
-        quiz_list.push(word.value);
-        word.value="";
-        console.log(quiz_list);
-    }
->>>>>>> 7542d72bc6a02337ea5fcf57c388acf565a56ded
-
+// 슬라이드쇼 새창에 정답과 문제 리스트 보내기
     function return_ql() {
         return quiz_list;
     }
