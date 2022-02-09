@@ -27,8 +27,8 @@
     function word_send() {
         const input_text = document.getElementById('word_array').value;
         const temp_text = input_text.replace(/(?:\r\n|\r|\n)/g, '<br>');
-        window.opener.document.quiz_list = temp_text.split('<br>');
-        window.opener.document.getElementById('text_field').textContent = document.getElementById('word_array').value
+        window.opener.upload_quiz(temp_text.split('<br>'));
+        // window.opener.document.getElementById('text_field').textContent = document.getElementById('word_array').value
         window.close();
     };
 
