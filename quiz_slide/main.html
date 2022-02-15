@@ -40,25 +40,43 @@
         <!-- 추가 부분 -->
         <!-- HTML 분할 관리-->
         <script src="../js/includeHTML.js"></script>
-        <!-- 페이지별 css 연결-->
-        <link href="../css/pageStyle.css">
 
 </head>
 
 <body>
     <div include-html="../nav.html"></div>   
     
+    
     <section class="page-section container" id="slide_quiz_page">
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <!-- <div class="divider-custom-icon"><i class="fas fa-star"></i></div> -->
+            <h2 class="masthead-heading text-uppercase mb-0">초성퀴즈 낱말 입력</h2>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- 첫번째 줄 : 낱말 입력 텍스트필드, 입력하기 버튼, 게임시작 버튼-->
         <div class="row">
-            <br>
-            <p> 초성퀴즈 단어 입력</p>
-            <div>
-                <input type="text" id="word" onkeyup="if(window.event.keyCode==13){word_save_card_body()}">
-                <button id="word_save">단어 저장하기</button>
+            <div class="col">
+                <div class="input-group">
+                    <input type="text" id="word" onkeyup="if(window.event.keyCode==13){word_save_card_body()}" class="form-control" placeholder="초성퀴즈 낱말 입력" aria-label="초성퀴즈 낱말 입력" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button id="word_save" class="btn btn-outline-secondary btn-primary" type="button">입력하기</button>                    
+                    </div>
+                </div>
             </div>
-            <div class='text_add'>
+            <div class="col">
+                <button class="btn btn-warning btn-outline-secondary" id="start_button">게임 시작</button>
             </div>
-            <button class="btn btn-primary" id="start_button">게임 시작</button>
+        </div>
+        <div class="row m-3">
+            <div class="col  mh-100 d-inline-block mw-50">     
+                <div class="title">준비된 낱말</div>
+                <div class="text_add border border-primary rounded" id="word_save"></div>
+            </div>
+            <div class="col">
+
+            </div>
         </div>
     </section>
 </body>
