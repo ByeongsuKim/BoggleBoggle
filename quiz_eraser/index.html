@@ -71,11 +71,11 @@
 
                 <!-- Portfolio Item 2-->
                 <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                    <div id="bt01" class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
                         </div>
-                        <img id="bt2" class="img-fluid" src="../assets/img/eraser_quiz/01_watermelon.png" alt="..." />
+                        <img class="img-fluid" src="../assets/img/eraser_quiz/01.png" alt="..." />
                     </div>
                 </div>                
 
@@ -86,7 +86,7 @@
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="../assets/img/eraser_quiz/02_banana.png" alt="..." />
+                        <img class="img-fluid" src="../assets/img/eraser_quiz/02.png" alt="..." />
                     </div>
                 </div>
 
@@ -97,7 +97,7 @@
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="../assets/img/eraser_quiz/03_grape.png" alt="..." />
+                        <img class="img-fluid" src="../assets/img/eraser_quiz/03.png" alt="..." />
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="../assets/img/eraser_quiz/04_peach.png" alt="..." />
+                        <img class="img-fluid" src="../assets/img/eraser_quiz/04.png" alt="..." />
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="../assets/img/eraser_quiz/05_tomatoes.png" alt="..." />
+                        <img class="img-fluid" src="../assets/img/eraser_quiz/05.png" alt="..." />
                     </div>
                 </div>
             </div>
@@ -130,8 +130,10 @@
 <script> includeHTML(); </script>
 
 <script>
-    alert("load");
-    var elem = document.getElementById('bt2')
-    console.log(elem);
+    const bt01_button = document.getElementById("bt01");
+    const imgId = (bt01_button.id).toString().slice(-2);
+    bt01_button.addEventListener("click", ()=>{
+        window.open('slideshow.html?img='+imgId,'', 'width=1280, height=720');
+    });
 </script>
 </html>

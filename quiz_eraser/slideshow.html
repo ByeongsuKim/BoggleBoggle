@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>초성퀴즈 화면</title>
+    <title>쓱싹퀴즈 화면</title>
 </head>
 <body>
-    <button class="test">test</button>
-    <div class="test"></div>
+    <div class="container">
+
+
+
+    </div>
 </body>
 <script>
-    const btn = document.querySelector('.test')
-    const test = document.querySelector('test')
-    btn.addEventListener('click',()=>{
-        const quiz_list = window.opener.return_ql();
-        console.log(quiz_list);
-        const quiz_card = window.opener.return_qc();
-        console.log(quiz_card);
-
-    })
+    const imgId = (document.location.href).toString().slice(-2);
+    console.log(imgId);
+    // 이미지 삽입 필요.
 </script>
 </html>
