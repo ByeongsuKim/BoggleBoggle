@@ -8,14 +8,31 @@
 </head>
 <body>
     <div class="container">
-
-
-
+        <canvas id='canvas' width='300' height='300' style='position:absolute; left:0px; top:0px;'></canvas>
     </div>
 </body>
 <script>
+
+    // 본 페이지가 열리리 때 url 주소에 imgId가 이미지 파일명으로 넘어옴
     const imgId = (document.location.href).toString().slice(-2);
     console.log(imgId);
+    
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext('2d');
+    const imgUrl = "../assets/img/eraser_quiz/"+imgId+".png";
     // 이미지 삽입 필요.
+
+
+    const img = new Image();
+    img.src = imgUrl;
+    img.onload = function(){
+        ctx.drawImage(img, 50, 50, 250, 300);
+    }
+
+        
+    console.log(img.src);
+
 </script>
+
+
 </html>
